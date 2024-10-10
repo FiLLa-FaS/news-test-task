@@ -1,0 +1,44 @@
+.card {
+  border: 1px solid #1a1a1a;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px 40px 20px 15px;
+  position: relative;
+
+  &__name {
+    margin: 0 0 20px;
+    font-size: 18px;
+
+    @media (width >= 768px) {
+      font-size: 24px;
+    }
+  }
+
+  &__button-delete {
+    padding: 0;
+    border: none;
+    transition: opacity 0.2s linear;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__button-edit {
+    padding: 0;
+    border: none;
+    transition: opacity 0.2s linear;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+}

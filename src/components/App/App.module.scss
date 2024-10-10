@@ -1,0 +1,74 @@
+.main-title {
+  margin: 0 0 40px;
+  font-size: 36px;
+
+  @media (width >= 900px) {
+    font-size: 54px;
+  }
+}
+
+.error {
+  font-weight: 700;
+  margin: 0 0 40px;
+}
+
+.button-text {
+  padding: 10px 20px;
+  font-weight: 700;
+  transition: all 0.3s linear;
+
+  &:hover {
+    background-color: #1a1a1a;
+    color: white;
+  }
+}
+
+.button-close {
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  border: none;
+  transition: opacity 0.2s linear;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.dialog {
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  @media (width >= 768px) {
+    padding: 40px;
+  }
+
+  &::backdrop {
+    background: rgba($color: #020202, $alpha: 0.5);
+  }
+
+  &__title {
+    margin: 0 0 30px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+
+  &__input {
+    min-height: 24px;
+  }
+}
