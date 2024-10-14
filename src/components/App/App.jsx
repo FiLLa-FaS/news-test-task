@@ -36,10 +36,12 @@ function App() {
     if (modalType === "edit") {
       window.edit.close();
     }
+    setCurrentNews({});
   };
 
   const handleAddNews = () => {
     if (currentNews.description && currentNews.name) {
+      closeModal("add");
       setNews((prevNews) => {
         return [
           ...prevNews,
@@ -51,7 +53,6 @@ function App() {
         ];
       });
     }
-    window.add.close();
   };
 
   const handleDeleteNews = (id) => {
@@ -74,6 +75,8 @@ function App() {
         description: newItem.description,
         name: newItem.name,
       };
+
+      setCurrentNews({});
 
       return [
         ...prevNews.slice(0, idx),
