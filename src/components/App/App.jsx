@@ -36,13 +36,13 @@ function App() {
     if (modalType === "edit") {
       window.edit.close();
     }
-    setCurrentNews({});
   };
 
   const handleAddNews = () => {
     if (currentNews.description && currentNews.name) {
-      closeModal("add");
       setNews((prevNews) => {
+        console.log(currentNews);
+
         return [
           ...prevNews,
           {
@@ -52,6 +52,7 @@ function App() {
           },
         ];
       });
+      setCurrentNews({});
     }
   };
 
@@ -75,8 +76,6 @@ function App() {
         description: newItem.description,
         name: newItem.name,
       };
-
-      setCurrentNews({});
 
       return [
         ...prevNews.slice(0, idx),
@@ -214,6 +213,3 @@ function App() {
 }
 
 export default App;
-
-// TODO: обработать пустую новость (пустой заголовок или пустое описание)
-// TODO: иконочки вместо кнопок удаления и редактирования
